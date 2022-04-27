@@ -1,5 +1,7 @@
 package com.example.readjsonfromfiledemo;
 
+import androidx.annotation.NonNull;
+
 public class Mountain {
 
     private String name;
@@ -30,6 +32,12 @@ public class Mountain {
 
     public int getSize() {
         return size;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return name + " " + size + " " + location;
     }
 
     public void setSize(int size) {
