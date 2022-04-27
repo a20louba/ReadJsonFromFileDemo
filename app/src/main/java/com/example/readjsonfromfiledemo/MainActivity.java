@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Scanner;
@@ -20,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
 
         String json = readFile("mountains.json");
         Log.d(TAG, json);
+        Gson gson = new Gson();
+
+        Type type = new TypeToken<List<Mountain>>() {}.getType();
+        List<Mountain> listOfMountains = gson.fromJson(json, type);
+
     }
 
 
